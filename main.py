@@ -4,7 +4,7 @@ from tkinter import filedialog, messagebox, Checkbutton, Entry, Label, Button
 from datetime import datetime
 
 # Task list
-tasks = ['CE', 'DTAN', 'DTCT', 'DTF', 'DTS1', 'DTS7', 'DTV', 'ST1', 'ST2']
+tasks = ['ST1', 'ST2', 'DTAN', 'DTF', 'DTV', 'DTS1', 'DTS7', 'DTCT']
 
 
 def rename_files():
@@ -35,9 +35,10 @@ def rename_files():
         for j, file in enumerate(task_files):
             extension = os.path.splitext(file)[1]
             if j < 2:  # .csv files
-                new_name = f"subject{subject}_{task}_sensor{j+1}{extension}"
+                sensor = "F6F2" if j == 0 else "03F5"
+                new_name = f"Sub-SAN{subject}_ses_V0_task_{task}_{sensor}{extension}"
             else:  # .mp4 file
-                new_name = f"subject{subject}_{task}_video{extension}"
+                new_name = f"Sub-SAN{subject}_ses_V0_task_{task}_video{extension}"
             os.rename(os.path.join(folder, file), os.path.join(folder, new_name))
 
     messagebox.showinfo("Information", "The files have been successfully renamed.")

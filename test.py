@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 # Task list
-tasks = ['CE', 'DTAN', 'DTCT', 'DTF', 'DTS1', 'DTS7', 'DTV', 'ST1', 'ST2']
+tasks = ['ST1', 'ST2', 'DTAN', 'DTF', 'DTV', 'DTS1', 'DTS7', 'DTCT']
 
 
 class Test:
